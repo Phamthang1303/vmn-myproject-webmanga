@@ -1,14 +1,14 @@
 import axiosClient from "./axiosClient";
 
 const productApi = {
-  getAll: (params) => {
-    const url = '/products';
+  getAllData: (params) => {
+    const url = '/api/get-data';
     return axiosClient.get(url, { params });
   },
 
-  get: (id) => {
-    const url = `/products/${id}`;
-    return axiosClient.get(url);
+  getDataByName: (params) => {
+    const url = `/api/get-data-by-name`;
+    return axiosClient.get(url,{params});
   },
 }
 
