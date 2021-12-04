@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../css/Navbar.css";
 
 function Navbar() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <Link to="/" className="navbar-brand">
+          <Link to="/" className="navbar-brand mx-5">
             Manga
           </Link>
           <button
@@ -21,23 +22,34 @@ function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
+            <form className="d-flex">
+              <input
+                className="form-control me-3 br-1-2 ml-4 mw-25"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button className="btn btn-outline-success br-1-2" type="submit">
+                Search
+              </button>
+            </form>
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li className="nav-item mx-2 home-active">
                 <Link to="/" className="nav-link active">
                   Home
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item mx-2">
                 <Link to="/about" className="nav-link active">
                   About Us
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item mx-2">
                 <Link to="/contact" className="nav-link active">
                   Contact Us
                 </Link>
               </li>
-              <li className="nav-item dropdown">
+              <li className="nav-item mx-2 dropdown">
                 <a
                   className="nav-link dropdown-toggle"
                   href="/"
@@ -70,17 +82,6 @@ function Navbar() {
                 </ul>
               </li>
             </ul>
-            <form className="d-flex">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
           </div>
         </div>
       </nav>

@@ -1,0 +1,61 @@
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.navbar .megamenu{ padding: 1rem;}
+.navbar .dropdown-menu{margin-top:0 !important;}
+.navbar-menu{
+  padding: 0 !important;
+}
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+
+  .navbar .has-megamenu{position:static!important;}
+  .navbar .megamenu{left:0; right:0; width:100%; margin-top:0;}
+}	
+/* ============ desktop view .end// ============ */
+
+/* ============ mobile view ============ */
+@media(max-width: 991px){
+  .navbar.fixed-top .navbar-collapse, .navbar.sticky-top .navbar-collapse{
+    overflow-y: auto;
+      max-height: 90vh;
+      margin-top:10px;
+  }
+  .pl-10{
+    padding-left: 3rem !important;
+  }
+  .pr-4{
+    padding-right: 0rem !important;
+  }
+  .mw-28{
+    min-width: 0 !important;
+  }
+  .ml-4{
+    margin-left: 0rem !important;
+  }
+}
+
+#main_nav .navbar-nav .nav-item:hover .nav-link{
+  background-color: rgb(114, 185, 247);
+  color:blue !important;
+}
+
+.ml-4{
+  margin-left: 4rem;
+}
+.pl-10{
+  padding-left: 10rem;
+}
+.mr-0{
+  margin-right: 0rem !important;
+}
+.pr-4{
+  padding-right: 4rem;
+}
+.br-1-2{
+  border-radius: 1.2rem !important;
+}
+.mw-25{
+  min-width: 25rem;
+}

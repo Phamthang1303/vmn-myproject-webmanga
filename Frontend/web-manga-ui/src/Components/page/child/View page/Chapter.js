@@ -53,12 +53,13 @@ function Chapter() {
                     ? picture2
                     : picture3
                 }
-                className="col-md-12"
+                className="col-md-12 w-100"
                 alt="manga"
               />
             </div>
-            <div className="col-md-10">
-              <h6>This is {dataManga.mg_name}</h6>
+            <div className="col-md-1"></div>
+            <div className="col-md-9">
+              <h5 className="mt-3">This is {dataManga.mg_name}</h5>
               <p>Tác giả: {dataManga.author}</p>
               <p>Tình trạng: {dataManga.status === 0?'Đã hoàn thành!':'Đang cập nhật!'}</p>
               <p>Thống kê</p>

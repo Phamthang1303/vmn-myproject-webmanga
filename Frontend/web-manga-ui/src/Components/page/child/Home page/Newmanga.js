@@ -21,7 +21,6 @@ const initManga = [
 function Newmanga() {
   return (
     <section className="section bg-c-light">
-      <div className="container">
         <div className="row">
           <div className="col-md-12 mb-4 text-center">
             <h3 className="main-heading">Truyện mới</h3>
@@ -44,7 +43,6 @@ function Newmanga() {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 }

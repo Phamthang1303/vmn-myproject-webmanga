@@ -2,12 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Manga({ init }) {
+
   const title = `<p>This is ${init.name}</p>`;
+
   return (
     <div className="col-md-4 mt-4 px-1">
-      <div className="card shadow">
+      <div className="card shadow br-5">
+        <div className="title-mg-l">
+          <div className="row">
+            <div className="col m-3 mx-1"><span className="content-l">123465798</span></div>
+            <div className="col m-3 mx-1"><span className="content-r">Hot</span></div>
+          </div>
+        </div>
         <span
-          class="d-inline-block"
+          className="d-inline-block"
           data-toggle="tooltip"
           data-html="true"
           title={title}
@@ -19,7 +27,7 @@ function Manga({ init }) {
         <div className="card-body">
           <h6>{init.name}</h6>
           <div className="underline">
-            <p>This is {init.name}</p>
+            <span>This is {init.name}</span>
           </div>
         </div>
       </div>

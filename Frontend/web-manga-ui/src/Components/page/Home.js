@@ -8,17 +8,11 @@ function Home() {
     <div>
       <Slider />
       <div className="container">
-        <div className="card mt-4">
-          <div className="card-body">
             <Vmc />
-            <div className="card mt-4">
-              <div className="card-body">
+            <div className="card my-4 py-2">
                 <Newmanga />
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
   );
 }

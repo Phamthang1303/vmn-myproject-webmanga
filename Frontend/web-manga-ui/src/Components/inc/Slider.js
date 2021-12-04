@@ -1,12 +1,15 @@
 import React from "react";
-import imgSlider from "../images/your-name-01.jpg";
-import imgSlider1 from "../images/your-name-02.jpg";
-import imgSlider2 from "../images/your-name-03.jpg";
+import imgSlider from "../images/your-name-01.png";
+import imgSlider1 from "../images/your-name-02.png";
+import imgSlider2 from "../images/your-name-03.png";
 
 function Slider() {
   return (
     <div className="container">
-      <div className="card mt-4 w-50 mx-25">
+      <div className="row">
+      <div className="col-md-3"></div>
+      <div className="col-md-6">
+      <div className="card mt-4">
         <div className="card-body">
           <div
             id="carouselExampleCaptions"
@@ -57,7 +60,7 @@ function Slider() {
               <div className="carousel-item active">
                 <img src={imgSlider1} className="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
-                  <h5>First picture Hồng xinh gái</h5>
+                  <h5>First picture</h5>
                   <p>
                     Some representative placeholder content for the first slide.
                   </p>
@@ -66,7 +69,7 @@ function Slider() {
               <div className="carousel-item">
                 <img src={imgSlider} className="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
-                  <h5>Second picture Hồng xinh gái</h5>
+                  <h5>Second picture</h5>
                   <p>
                     Some representative placeholder content for the second
                     slide.
@@ -76,7 +79,7 @@ function Slider() {
               <div className="carousel-item">
                 <img src={imgSlider2} className="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
-                  <h5>Third picture Hồng xinh gái</h5>
+                  <h5>Third picture</h5>
                   <p>
                     Some representative placeholder content for the third slide.
                   </p>
@@ -85,16 +88,16 @@ function Slider() {
               <div className="carousel-item">
                 <img src={imgSlider} className="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
-                  <h5>Four picture Hồng xinh gái</h5>
+                  <h5>Four picture</h5>
                   <p>
                     Some representative placeholder content for the third slide.
                   </p>
                 </div>
               </div>
               <div className="carousel-item">
-                <img src={imgSlider1} className="d-block w-100" alt="..." />
+                <img src={imgSlider1} className="d-block w-100 " alt="..." />
                 <div className="carousel-caption d-none d-md-block">
-                  <h5>Five picture Hồng xinh gái</h5>
+                  <h5>Five picture</h5>
                   <p>
                     Some representative placeholder content for the third slide.
                   </p>
@@ -103,7 +106,7 @@ function Slider() {
               <div className="carousel-item">
                 <img src={imgSlider2} className="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
-                  <h5>Six picture Hồng xinh gái</h5>
+                  <h5>Six picture</h5>
                   <p>
                     Some representative placeholder content for the third slide.
                   </p>
@@ -136,6 +139,9 @@ function Slider() {
             </button>
           </div>
         </div>
+      </div>
+      </div>
+      <div className="col-md-3"></div>
       </div>
     </div>
   );
