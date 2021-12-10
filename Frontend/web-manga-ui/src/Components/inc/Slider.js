@@ -1,7 +1,5 @@
 import React from "react";
-import imgSlider from "../images/your-name-01.png";
-import imgSlider1 from "../images/your-name-02.png";
-import imgSlider2 from "../images/your-name-03.png";
+import "../css/Slider.css"
 
 function Slider() {
   return (
@@ -10,7 +8,7 @@ function Slider() {
       <div className="col-md-3"></div>
       <div className="col-md-6">
       <div className="card mt-4">
-        <div className="card-body">
+        <div className="card-body khung-34">
           <div
             id="carouselExampleCaptions"
             className="carousel slide"
@@ -58,7 +56,7 @@ function Slider() {
             </div>
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img src={imgSlider1} className="d-block w-100" alt="..." />
+                <img src="http://222.254.16.220:8148/manga/picture/slider/1.jpg" className="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
                   <h5>First picture</h5>
                   <p>
@@ -67,7 +65,7 @@ function Slider() {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src={imgSlider} className="d-block w-100" alt="..." />
+                <img src="http://222.254.16.220:8148/manga/picture/slider/2.jpg" className="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
                   <h5>Second picture</h5>
                   <p>
@@ -77,7 +75,7 @@ function Slider() {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src={imgSlider2} className="d-block w-100" alt="..." />
+                <img src="http://222.254.16.220:8148/manga/picture/slider/3.jpg" className="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
                   <h5>Third picture</h5>
                   <p>
@@ -86,7 +84,7 @@ function Slider() {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src={imgSlider} className="d-block w-100" alt="..." />
+                <img src="http://222.254.16.220:8148/manga/picture/slider/4.jpg" className="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
                   <h5>Four picture</h5>
                   <p>
@@ -95,7 +93,7 @@ function Slider() {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src={imgSlider1} className="d-block w-100 " alt="..." />
+                <img src="http://222.254.16.220:8148/manga/picture/slider/5.jpg" className="d-block w-100 " alt="..." />
                 <div className="carousel-caption d-none d-md-block">
                   <h5>Five picture</h5>
                   <p>
@@ -104,7 +102,7 @@ function Slider() {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src={imgSlider2} className="d-block w-100" alt="..." />
+                <img src="http://222.254.16.220:8148/manga/picture/slider/6.jpg" className="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
                   <h5>Six picture</h5>
                   <p>

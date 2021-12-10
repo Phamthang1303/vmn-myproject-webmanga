@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "../css/Navbar.css";
 
 function Menu() {
@@ -7,7 +7,7 @@ function Menu() {
     <div>
       <nav class="navbar navbar-menu navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-          <a class="navbar-brand ml-4" href="/category">
+          <a class="navbar-brand ml-4" href="/">
             Trang chủ
           </a>
           <button
@@ -203,7 +203,7 @@ function Menu() {
                   <div class="row g-3 pl-10 pr-4">
                     <div class="col-lg-2 col-6">
                       <div class="col-megamenu">
-                      <h6 class="title">Title Menu One</h6>
+                        <h6 class="title">Title Menu One</h6>
                         <ul class="list-unstyled">
                           <li>
                             <a href="/topmanga">Custom Menu</a>
@@ -319,51 +319,44 @@ function Menu() {
                 </div>
               </li>
               <li class="nav-item mx-1 active">
-                {" "}
-                <a class="nav-link" href="/category">
-                  Home{" "}
-                </a>{" "}
-              </li>
-              <li class="nav-item mx-1">
-                <a class="nav-link" href="/category">
-                  {" "}
-                  About{" "}
+                <a class="nav-link" href="/">
+                  Home
                 </a>
               </li>
               <li class="nav-item mx-1">
-                <a class="nav-link" href="/category">
-                  {" "}
-                  Services{" "}
+                <a class="nav-link" href="/">
+                  About
+                </a>
+              </li>
+              <li class="nav-item mx-1">
+                <a class="nav-link" href="/">
+                  Services
                 </a>
               </li>
             </ul>
             <ul class="navbar-nav ms-auto">
               <li class="nav-item mx-1">
-                <a class="nav-link" href="/category">
-                  {" "}
-                  Menu item{" "}
+                <a class="nav-link" href="/">
+                  Menu item
                 </a>
               </li>
               <li class="nav-item mx-1 dropdown">
                 <a
                   class="nav-link  dropdown-toggle"
-                  href="/category"
+                  href="/"
                   data-bs-toggle="dropdown"
                 >
-                  {" "}
-                  Dropdown right{" "}
+                  Dropdown right
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                   <li>
-                    <a class="dropdown-item" href="/category">
-                      {" "}
+                    <a class="dropdown-item" href="/">
                       Submenu item 1
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="/category">
-                      {" "}
-                      Submenu item 2{" "}
+                    <a class="dropdown-item" href="/">
+                      Submenu item 2
                     </a>
                   </li>
                 </ul>

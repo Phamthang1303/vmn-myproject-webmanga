@@ -1,48 +1,71 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Manga from "./Manga";
-import picture1 from "../../../images/your-name-01.jpg";
-import picture2 from "../../../images/your-name-02.jpg";
-import picture3 from "../../../images/your-name-03.jpg";
 
-const initManga = [
-  {
-    name: "Manga 01",
-    img: JSON.stringify(picture1).replace('"', "").replace('"', ""),
-  },
-  {
-    name: "Manga 02",
-    img: JSON.stringify(picture2).replace('"', "").replace('"', ""),
-  },
-  {
-    name: "Manga 03",
-    img: JSON.stringify(picture3).replace('"', "").replace('"', ""),
-  },
-];
+import vwMangaInfo from "../../../../api/vwMangaInfo";
+
 function Newmanga() {
+  const [data, setData] = useState([]);
+  const [dataManga01, setDataManga01] = useState([]);
+  const [dataManga02, setDataManga02] = useState([]);
+
+  useEffect(() => {
+    async function fetchAllData() {
+      try {
+        setData([]);
+        const response = await vwMangaInfo.getAllData();
+        setData(response);
+        loadDataManga(response);
+      } catch (error) {
+        console.log("Failed fetch all data: " + error);
+      }
+    }
+
+    fetchAllData();
+  }, []);
+
+  async function loadDataManga(data) {
+    try {
+      const data01 = [];
+      const data02 = [];
+      await data.forEach((data) => {
+        if (data.id % 2 === 0) {
+          data01.push(data);
+        } else {
+          data02.push(data);
+        }
+      });
+      
+      setDataManga01(data01);
+      setDataManga02(data02);
+    } catch (error) {
+      console.log("Failed load data: " + error);
+    }
+  }
+
   return (
     <section className="section bg-c-light">
+      <div className="row">
+        <div className="col-md-12 mb-4 text-center">
+          <h3 className="main-heading">Truyện mới</h3>
+          <div className="underline mx-auto"></div>
+        </div>
         <div className="row">
-          <div className="col-md-12 mb-4 text-center">
-            <h3 className="main-heading">Truyện mới</h3>
-            <div className="underline mx-auto"></div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <div className="row">
-                <Manga init={initManga[0]} />
-                <Manga init={initManga[1]} />
-                <Manga init={initManga[2]} />
-              </div>
+          <div className="col">
+            <div className="row">
+              {dataManga01
+                ? dataManga01.map((item) => <Manga init={item} />)
+                : undefined}
             </div>
-            <div className="col">
-              <div className="row">
-                <Manga init={initManga[0]} />
-                <Manga init={initManga[2]} />
-                <Manga init={initManga[1]} />
-              </div>
+          </div>
+          <div className="col">
+            <div className="row">
+              {dataManga02
+                ? dataManga02.map((item) => <Manga init={item} />)
+                : undefined}
             </div>
           </div>
         </div>
+      </div>
     </section>
   );
 }

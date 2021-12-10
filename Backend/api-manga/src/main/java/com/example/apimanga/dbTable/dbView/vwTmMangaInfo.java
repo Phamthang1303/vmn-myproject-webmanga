@@ -1,4 +1,4 @@
-package com.example.apimanga.dbTable;
+package com.example.apimanga.dbTable.dbView;
 
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -7,9 +7,9 @@ import java.time.ZonedDateTime;
 import org.hibernate.annotations.Cache;
 
 @Entity
-@Table(name="tm_manga_info")
+@Table(name="vw_tm_manga_info")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class tmMangaInfo {
+public class vwTmMangaInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator", allocationSize=1)
@@ -51,6 +51,15 @@ public class tmMangaInfo {
     @Column(name = "category")
     private String category;
 
+    @Column(name = "media_title")
+    private String media_title;
+
+    @Column(name = "media_content")
+    private String media_content;
+
+    @Column(name = "picture_type")
+    private String picture_type;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
@@ -60,7 +69,7 @@ public class tmMangaInfo {
         this.id = id;
     }
 
-    public tmMangaInfo id(Long id){
+    public vwTmMangaInfo id(Long id){
         this.id = id;
         return this;
     }
@@ -73,7 +82,7 @@ public class tmMangaInfo {
         this.status = status;
     }
 
-    public tmMangaInfo status(int status){
+    public vwTmMangaInfo status(int status){
         this.status = status;
         return this;
     }
@@ -86,7 +95,7 @@ public class tmMangaInfo {
         this.is_hot = is_hot;
     }
 
-    public tmMangaInfo is_hot(int is_hot){
+    public vwTmMangaInfo is_hot(int is_hot){
         this.is_hot = is_hot;
         return this;
     }
@@ -99,7 +108,7 @@ public class tmMangaInfo {
         this.is_like = is_like;
     }
 
-    public tmMangaInfo is_like(int is_like){
+    public vwTmMangaInfo is_like(int is_like){
         this.is_like = is_like;
         return this;
     }
@@ -112,7 +121,7 @@ public class tmMangaInfo {
         this.is_share = is_share;
     }
 
-    public tmMangaInfo is_share(int is_share){
+    public vwTmMangaInfo is_share(int is_share){
         this.is_share = is_share;
         return this;
     }
@@ -125,7 +134,7 @@ public class tmMangaInfo {
         this.is_view = is_view;
     }
 
-    public tmMangaInfo is_view(int is_view){
+    public vwTmMangaInfo is_view(int is_view){
         this.is_view = is_view;
         return this;
     }
@@ -136,7 +145,7 @@ public class tmMangaInfo {
 
     public void setMg_name(String mg_name){ this.mg_name = mg_name;}
 
-    public tmMangaInfo mg_name(String mg_name){
+    public vwTmMangaInfo mg_name(String mg_name){
         this.mg_name = mg_name;
         return this;
     }
@@ -147,7 +156,7 @@ public class tmMangaInfo {
 
     public void setSub_name(String sub_name){ this.sub_name = sub_name;}
 
-    public tmMangaInfo sub_name(String sub_name){
+    public vwTmMangaInfo sub_name(String sub_name){
         this.sub_name = sub_name;
         return this;
     }
@@ -160,7 +169,7 @@ public class tmMangaInfo {
         this.chapter = chapter;
     }
 
-    public tmMangaInfo chapter(int chapter){
+    public vwTmMangaInfo chapter(int chapter){
         this.chapter = chapter;
         return this;
     }
@@ -173,7 +182,7 @@ public class tmMangaInfo {
         this.author = author;
     }
 
-    public tmMangaInfo author(String author){
+    public vwTmMangaInfo author(String author){
         this.author = author;
         return this;
     }
@@ -186,7 +195,7 @@ public class tmMangaInfo {
         this.descriptions = descriptions;
     }
 
-    public tmMangaInfo descriptions(String descriptions){
+    public vwTmMangaInfo descriptions(String descriptions){
         this.descriptions = descriptions;
         return this;
     }
@@ -199,8 +208,47 @@ public class tmMangaInfo {
         this.category = category;
     }
 
-    public tmMangaInfo category(String category){
+    public vwTmMangaInfo category(String category){
         this.category = category;
+        return this;
+    }
+
+    public String getMedia_title() {
+        return media_title;
+    }
+
+    public void setMedia_title(String media_title) {
+        this.media_title = media_title;
+    }
+
+    public vwTmMangaInfo media_title(String media_title){
+        this.media_title = media_title;
+        return this;
+    }
+
+    public String getMedia_content() {
+        return media_content;
+    }
+
+    public void setMedia_content(String media_content) {
+        this.media_content = media_content;
+    }
+
+    public vwTmMangaInfo media_content(String media_content){
+        this.media_content = media_content;
+        return this;
+    }
+
+    public String getPicture_type() {
+        return picture_type;
+    }
+
+    public void setPicture_type(String picture_type) {
+        this.picture_type = picture_type;
+    }
+
+    public vwTmMangaInfo picture_type(String picture_type){
+        this.picture_type = picture_type;
         return this;
     }
 
@@ -212,7 +260,7 @@ public class tmMangaInfo {
         this.datetime = datetime;
     }
 
-    public tmMangaInfo datetime(ZonedDateTime datetime){
+    public vwTmMangaInfo datetime(ZonedDateTime datetime){
         this.datetime = datetime;
         return this;
     }
@@ -224,11 +272,11 @@ public class tmMangaInfo {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof tmMangaInfo)) {
+        if (!(o instanceof vwTmMangaInfo)) {
             return false;
         }
 
-        return id != null && id.equals(((tmMangaInfo) o).id);
+        return id != null && id.equals(((vwTmMangaInfo) o).id);
     }
 
     @Override
@@ -240,7 +288,7 @@ public class tmMangaInfo {
     // prettier-ignore
     @Override
     public String toString() {
-        return "MangaInfo{" +
+        return "CustomMangaInfo{" +
                 "id=" + getId() +
                 ", mg_name='" + getMg_name() + "'" +
                 ", status='" + getSub_name() + "'" +
@@ -254,6 +302,10 @@ public class tmMangaInfo {
                 ", sub_name=" + getSub_name() +
                 ", author='" + getAuthor() + "'" +
                 ", category='" + getCategory() + "'" +
+                ", media_title='" + getMedia_title() + "'" +
+                ", media_content='" + getMedia_content() + "'" +
+                ", picture_type='" + getPicture_type() + "'" +
                 "}";
     }
 }
+

@@ -11,12 +11,19 @@ public class tmMangaCategory {
     @SequenceGenerator(name = "sequenceGenerator", allocationSize=1)
     private Long id;
 
-    @Column(name = "mg_name")
-    private String mg_name;
+    @Column(name = "category_name")
+    private String category_name;
 
-    @Column(name = "mg_number")
-    private int mg_number;
+    @Column(name = "category_id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator", allocationSize=1)
+    private int category_id;
 
+    @Column(name = "category_descriptions")
+    private String category_descriptions;
+
+    @Column(name = "category_note")
+    private String category_note;
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
 
@@ -33,29 +40,55 @@ public class tmMangaCategory {
         return this;
     }
 
-    public String getMg_name() {
-        return mg_name;
+    public String getCategory_name() {
+        return category_name;
     }
 
-    public void setMg_name(String mg_name) {
-        this.mg_name = mg_name;
+    public void setCategory_name(String category_name) {
+        this.category_name = category_name;
     }
 
-    public tmMangaCategory mg_name(String mg_name){
-        this.mg_name = mg_name;
+    public tmMangaCategory category_name(String category_name){
+        this.category_name = category_name;
         return this;
     }
 
-    public int getMg_number() {
-        return mg_number;
+    public int getCategory_id() {
+        return category_id;
     }
 
-    public void setMg_number(int mg_number) {
-        this.mg_number = mg_number;
+    public void setCategory_id(int category_id) {
+        this.category_id = category_id;
     }
 
-    public tmMangaCategory mg_number(int mg_number){
-        this.mg_number = mg_number;
+    public tmMangaCategory category_id(int category_id){
+        this.category_id = category_id;
+        return this;
+    }
+
+    public String getCategory_descriptions() {
+        return category_descriptions;
+    }
+
+    public void setCategory_descriptions(String category_descriptions) {
+        this.category_descriptions = category_descriptions;
+    }
+
+    public tmMangaCategory category_descriptions(String category_descriptions){
+        this.category_descriptions = category_descriptions;
+        return this;
+    }
+
+    public String getCategory_note() {
+        return category_note;
+    }
+
+    public void setCategory_note(String category_note) {
+        this.category_note = category_note;
+    }
+
+    public tmMangaCategory category_note(String category_note){
+        this.category_note = category_note;
         return this;
     }
 
@@ -84,8 +117,10 @@ public class tmMangaCategory {
     public String toString() {
         return "MangaCategory{" +
                 "id=" + getId() +
-                ", mg_name='" + getMg_name() + "'" +
-                ", mg_number='" + getMg_number() + "'" +
+                ", category_name='" + getCategory_name() + "'" +
+                ", category_id='" + getCategory_id() + "'" +
+                ", category_descriptions='" + getCategory_descriptions() + "'" +
+                ", category_note='" + getCategory_note() + "'" +
                 "}";
     }
 }

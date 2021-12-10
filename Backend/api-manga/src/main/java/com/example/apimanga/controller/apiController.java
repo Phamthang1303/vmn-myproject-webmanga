@@ -1,14 +1,16 @@
 package com.example.apimanga.controller;
 
 import com.example.apimanga.dbTable.tmMangaInfo;
+import com.example.apimanga.repository.CustomMangaInfoRepository;
+import com.example.apimanga.repository.MangaCategoryRepository;
 import com.example.apimanga.repository.MangaInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -17,21 +19,13 @@ public class apiController {
     @Autowired
     private MangaInfoRepository info;
 
+    @Autowired
+    private MangaCategoryRepository mangaCategoryRepository;
+
     @RequestMapping("/")
     public String HomePage(){
         return "Welcome to TM page!";
     }
-
-//    @RequestMapping("/getinfo")
-//    public Object getById(
-//            @RequestParam(required = true) Long id,
-//            @RequestParam(required = true) String name){
-//        if(!name.isEmpty()){
-//            return info.findByMg_name(name);
-//        }else{
-//            return info.findById(id);
-//        }
-//    }
 
     @RequestMapping("/create-test")
     public String createSimpleData(
@@ -53,6 +47,8 @@ public class apiController {
                 tmInfo.setIs_like(100 + i);
                 tmInfo.setIs_share(50 + i);
                 tmInfo.setIs_view(500+ (int)(Math.random()*300));
+                int a = getNumber(4);
+                tmInfo.setCategory((a) + "," + (a+1) + "," + (a+2));
                 info.save(tmInfo);
             }
             int countData = info != null?(int)info.count():0;
@@ -60,6 +56,10 @@ public class apiController {
         }catch (Exception ex){
             return "Error!";
         }
+    }
+
+    private int getNumber(int max){
+        return 10 + (int)(Math.random()*max);
     }
 
     @DeleteMapping("/delete-all")
@@ -90,11 +90,30 @@ public class apiController {
         return info.findAll();
     }
 
-//    @RequestMapping("/get-data-by-name")
-//    public Optional<tmMangaInfo> getDataByName(
-//            @RequestParam(required = true) String name
-//    ){
-//        Optional<tmMangaInfo>
-//        return info.findByMg_name(name);
-//    }
+    @RequestMapping("/get-data-by-name")
+    public List<tmMangaInfo> getDataByName(
+            @RequestParam(required = true) String name
+    ){
+        return info.findByMg_name(name);
+    }
+
+    @RequestMapping("/get-category")
+    public List<String> getCategoryById(
+            @RequestParam(required = true) String id
+    ){
+        List<String> result = new ArrayList<>();
+        try{
+            List<String> lstId = !id.isEmpty()?Arrays.asList(id.split(",")):new ArrayList<>();
+            for (String value : lstId){
+                try{
+                    result.add(mangaCategoryRepository.findtmMangaCategoryName(Integer.parseInt(value.trim())).getCategory_name());
+                }catch (Exception ex){
+                    System.out.println("Error load category id '" + value +"'");
+                }
+            }
+        }catch (Exception e){
+            System.out.println("Error getCategoryById: " + e);
+        }
+        return result;
+    }
 }
